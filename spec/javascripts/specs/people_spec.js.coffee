@@ -26,3 +26,10 @@ describe "People", ->
       expect(@person.money).toEqual 0
       expect(result).toEqual false
 
+    it "should be hones and put maney to safe", ->
+      spyOn(@person, '_put_money_to_safe')
+
+      @person.takes_money(5)
+
+      expect(@person._put_money_to_safe).toHaveBeenCalled()
+      expect(@person._put_money_to_safe.calls.argsFor(0)).toEqual [5, "EinZweiDrei"]
