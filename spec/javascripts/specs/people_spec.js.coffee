@@ -7,6 +7,13 @@ describe "People", ->
     it "should name himself", ->
       expect(@person.say_name()).toEqual "My name is Jon Doe!"
 
+    it "should say his name publically", ->
+      loadFixtures 'chat_box'
+
+      @person.say_name_loud("#chat_box")
+
+      expect($("#chat_box").text()).toEqual("My name is Jon Doe!")
+
   describe "Seller", ->
     beforeEach ->
       @person = new Seller "Jon Doe"

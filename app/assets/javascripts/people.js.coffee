@@ -13,6 +13,9 @@ class Person
   move: (meters) ->
     alert @name + " moved #{meters}m."
 
+  say_name_loud: (public_place) ->
+    jQuery(public_place).append(@say_name())
+
   _global: ->
     global[@_global_name]
 

@@ -17,4 +17,4 @@ module JasmineRails
       render "#{JasmineRails.fixtures_dir}/#{params[:filename]}"
     end
   end
-end if defined?(JasminRails)
+end if defined?(JasmineRails)
