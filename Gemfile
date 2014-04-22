@@ -44,6 +44,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'jasmine-rails'
 end
 
 # Use ActiveModel has_secure_password
