@@ -34,6 +34,14 @@ group :execjs do
   gem "therubyracer", platform: :ruby
 end
 
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "meta_request"
+
+  gem "quiet_assets"
+end
+
 group :development, :test do
   gem 'rspec-rails'
 end
