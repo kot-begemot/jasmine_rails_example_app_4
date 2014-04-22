@@ -1,28 +1,26 @@
-== README
+= Jasmin integration example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This projects presents how to integrate jasmin-rails gem into Rails 4 project.
+It covers following cases
 
-Things you may want to cover:
+* Assertion
+* Mocking and Stubing
+* Timer simulation
+* HTML fixtures loading
+* External data in helers
 
-* Ruby version
+== Console commands
 
-* System dependencies
+    rails new jasminrise_example_app_4 --skip-test-unit
+    rvm use --create 2.0.0@jasminrise_example_app_4 --ruby-version
+    rails generate rspec:install
+    rails generate scaffold Person name:string age:integer zipcode:string
+    rake db:mirate
+    rails generate bootstrap:install static
+    rails g bootstrap:themed Person
+    rails g bootstrap:layout application fixed
+    rails generate jasmine_rails:install
 
-* Configuration
+== Console testing
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    RAILS_ENV=test bundle exec rake spec:javascript
