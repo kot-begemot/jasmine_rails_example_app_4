@@ -36,3 +36,27 @@ describe "People", ->
 
     xit "should become millioner", ->
       "Tommorow i'll start!"
+
+  describe "Runner", ->
+    beforeEach ->
+      @person = new Runner "Jon Doe"
+
+      jasmine.clock().install()
+
+    afterEach ->
+      jasmine.clock().uninstall()
+
+    it "should tired after running", ->
+      @person.run(45)
+
+      jasmine.clock().tick(45000)
+
+      expect(@person.stamina).toEqual 55
+
+    it "should really run", ->
+      @person.run(45)
+      spyOn(@person, '_run').and.callThrough() 
+
+      jasmine.clock().tick(45000)
+
+      expect(@person._run.calls.count()).toEqual 45
