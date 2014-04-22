@@ -33,3 +33,6 @@ describe "People", ->
 
       expect(@person._put_money_to_safe).toHaveBeenCalled()
       expect(@person._put_money_to_safe.calls.argsFor(0)).toEqual [5, "EinZweiDrei"]
+
+    xit "should become millioner", ->
+      "Tommorow i'll start!"
