@@ -27,10 +27,12 @@ spec_dir: spec/javascripts
 helpers:
   - "helpers/**/*.{js.coffee,js,coffee}"
 
+fixtures_dir: 'spec/javascripts/fixtures'
+
 # list of file expressions to include as specs into spec runner
 # relative path from spec_dir
 spec_files:
-  - "**/*[Ss]pec.{js.coffee,js,coffee}"
+  - "specs/**/*[Ss]pec.{js.coffee,js,coffee}"
 
 # path to directory of temporary files
 # (spec runner and asset cache)
