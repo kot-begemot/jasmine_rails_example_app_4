@@ -20,3 +20,5 @@ class Runner extends Person
   move: ->
     alert "Galloping..."
     super 45
+
+@Person = Person
